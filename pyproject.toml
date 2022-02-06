@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "pltpublish"
+version = "1.0.0"
+description = "Utility package that takes care of configuring Matplotlib for publication-ready figures!"
+authors = ["Théo Matricon <theomatricon@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/Theomat/pltpublish"
+
+[tool.poetry.dependencies]
+python = ">=3.7.1"
+matplotlib = ">=3.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.11b1"
+mypy = ">=0.910"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
