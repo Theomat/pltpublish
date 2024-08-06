@@ -47,6 +47,17 @@ def setup_latex_fonts() -> None:
     matplotlib.rcParams["font.family"] = "STIXGeneral"
 
 
+def set_size_pixels(width: Optional[int] = None, height: Optional[int] = None) -> None:
+    """
+    Only works if NOT in a notebook and a figure has already been created.
+    """
+    fig = plt.gcf()
+    current_dpi = fig.dpi
+    dw = width or fig.get_figwidth() * current_dpi
+    dh = height or fig.get_figheight() * current_dpi
+    fig.set_size_inches(dw / current_dpi, dh / current_dpi)
+
+
 def save_fig(file: str, scale: float = 1, **kwargs: Any) -> None:
     """
     Save a figure to file but ensure that:
