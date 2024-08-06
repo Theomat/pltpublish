@@ -47,19 +47,22 @@ def setup_latex_fonts() -> None:
     matplotlib.rcParams["font.family"] = "STIXGeneral"
 
 
-def save_fig(file: str, **kwargs: Any) -> None:
+def save_fig(file: str, scale: float = 1, **kwargs: Any) -> None:
     """
     Save a figure to file but ensure that:
     - the grid is shown
-    - the quality is at least 500 dpi
     - the figure is compact, that is there is no white space around the figure
+
+    Offer scale parameter to scale up or down the figure before saving, note that this is approximate as this is before removing white space.
 
     Additional arguments are passed to pyplot.save_fig.
     """
     plt.grid(True)
-    kwargs["dpi"] = max(kwargs.get("dpi", 0), 500)
     if "bbox_inches" not in kwargs:
         kwargs["bbox_inches"] = "tight"
+    fig = plt.gcf()
+    current_dpi = fig.dpi
+    kwargs["dpi"] = kwargs.get("dpi", current_dpi) * scale
     plt.savefig(file, **kwargs)
 
 
