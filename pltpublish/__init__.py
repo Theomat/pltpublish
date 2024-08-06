@@ -4,7 +4,8 @@ from pltpublish.pltpublish import (
     setup,
     setup_colorblind,
     setup_latex_fonts,
+    set_size_pixels,
     layout_for_subplots,
 )
 
-__version__ = "1.0.0"
+__version__ = "1.0.2"

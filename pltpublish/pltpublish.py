@@ -1,5 +1,6 @@
 import math
-from typing import Any, Tuple
+import sys
+from typing import Any, Optional, Tuple
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -144,5 +145,6 @@ __all__ = [
     "setup",
     "setup_colorblind",
     "setup_latex_fonts",
+    "set_size_pixels",
     "layout_for_subplots",
 ]
