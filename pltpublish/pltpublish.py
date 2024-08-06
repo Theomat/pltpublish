@@ -17,7 +17,20 @@ def setup_colorblind() -> None:
     """
     Change the color palette used to the 'seaborn-colorblind' palette.
     """
-    plt.style.use("seaborn-colorblind")
+    availables = plt.style.available
+    colorblinds = [x for x in availables if "colorblind" in x]
+    if len(colorblinds) == 0:
+        print(
+            "pltpublish: could nto find any colorblind style installed!",
+            file=sys.stderr,
+        )
+    else:
+        seaborn_like = [x for x in colorblinds if "seaborn" in x]
+        if seaborn_like:
+            style = seaborn_like.pop(0)
+        else:
+            style = colorblinds.pop(0)
+    plt.style.use(style)
 
 
 def setup_latex_fonts() -> None:
