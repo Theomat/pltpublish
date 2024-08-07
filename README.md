@@ -4,7 +4,9 @@ This project on [PyPi](https://pypi.org/project/pltpublish/)|[GitHub](https://gi
 
 Utility package that takes care of configuring Matplotlib for publication-ready figures!
 
-## Easy to use
+```bash
+pip install pltpublish
+```
 
 **Before**                            **After**
 
@@ -18,6 +20,10 @@ plt.savefig("my_fig.eps")                         > pub.save_fig("my_fig.eps")
 |**Without `pltpublish`**|**With `pltpublish`**|
 |-|-|
 | <img src="https://github.com/Theomat/pltpublish/raw/main/examples/images/classic.png" width="400" height="300">|<img src="https://github.com/Theomat/pltpublish/raw/main/examples/images/pltpublish.png" width="400" height="300"> |
+
+## Recommendation
+
+If you are using LaTeX then perhaps [TikzPlotLib](https://github.com/nschloe/tikzplotlib) will be highly relevant.
 
 ## All Features
 
