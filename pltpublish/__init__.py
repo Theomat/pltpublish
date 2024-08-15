@@ -6,6 +6,8 @@ from pltpublish.pltpublish import (
     setup_latex_fonts,
     set_size_pixels,
     layout_for_subplots,
+    get_color_cycle,
+    set_color_cycle,
 )
 
-__version__ = "1.0.2"
+__version__ = "1.0.3"

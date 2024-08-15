@@ -34,3 +34,5 @@ If you are using LaTeX then perhaps [TikzPlotLib](https://github.com/nschloe/tik
 - `save_fig` acts like `pyplot.savefig` but guarantees that the grid is on and removes outer white space and also enables to scale up or down the figure before saving
 - `extract_legend_as_figure` extracts the legend of your figure and plots it on another new figure
 - `layout_for_subplots` finds automatically a good layout given the number of plots you have to plot on the same figure
+- `get_color_cycle` gets you the current default color cycle
+- `set_color_cycle` sets the current default color cycle

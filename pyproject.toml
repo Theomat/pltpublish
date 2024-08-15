@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pltpublish"
-version = "1.0.2"
+version = "1.0.3"
 description = "Utility package that takes care of configuring Matplotlib for publication-ready figures!"
 authors = ["Théo Matricon <theomatricon@gmail.com>"]
 license = "MIT"

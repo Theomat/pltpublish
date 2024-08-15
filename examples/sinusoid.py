@@ -1,5 +1,4 @@
 import math
-from tkinter.messagebox import NO
 import matplotlib.pyplot as plt
 import pltpublish as pub
 
@@ -40,8 +39,17 @@ def set_size() -> None:
     pub.save_fig("pltpublish_800x600.png", scale=2)
 
 
+def colors() -> None:
+    pub.setup()
+    plt.figure()
+    pub.shift_color_cycle()
+    plotting()
+    pub.save_fig("pltpublish_colors.png")
+
+
 if __name__ == "__main__":
     # in that order
     classic()
     pltpublish()
     set_size()
+    colors()

@@ -1,9 +1,10 @@
 import math
 import sys
-from typing import Any, Optional, Tuple
+from typing import Any, List, Optional, Tuple
 
 import matplotlib
 import matplotlib.pyplot as plt
+from cycler import cycler
 
 
 def setup() -> None:
@@ -139,6 +140,20 @@ def layout_for_subplots(nplots: int, screen_ratio: float = 16 / 9) -> Tuple[int,
     return nrows, ncols
 
 
+def get_color_cycle() -> List[str]:
+    """
+    Gets the current default color list used for plotting.
+    """
+    prop_cycle = plt.rcParams['axes.prop_cycle']
+    colors = prop_cycle.by_key()['color']
+    return colors
+
+def set_color_cycle(colors: List[str]) -> None:
+    """
+    Set the current default color list used for plotting.
+    """
+    plt.rc("axes", prop_cycle=cycler(color=colors))
+
 __all__ = [
     "extract_legend_as_figure",
     "save_fig",
@@ -147,4 +162,6 @@ __all__ = [
     "setup_latex_fonts",
     "set_size_pixels",
     "layout_for_subplots",
+    "get_color_cycle",
+    "set_color_cycle",
 ]
