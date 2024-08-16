@@ -88,7 +88,7 @@ def extract_legend_as_figure(figure: Any, ncol: int = 1) -> matplotlib.figure.Fi
     figlegend = plt.figure()
 
     if hasattr(figure, "axes"):
-        patches, labels = figure.axes[0, 0].get_legend_handles_labels()
+        patches, labels = figure.axes[0].get_legend_handles_labels()
     elif hasattr(figure, "get_legend_handles_labels"):
         patches, labels = figure.get_legend_handles_labels()
     figlegend.legend(handles=patches, labels=labels, ncol=ncol)
